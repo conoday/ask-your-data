@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #0b0f19;
+    --surface: #131929;
+    --surface-subtle: #1a2235;
+    --border: #1e2d45;
+    --primary: #6366f1;
+    --primary-glow: #818cf8;
+    --accent: #22d3ee;
+    --text: #e2e8f0;
+    --text-muted: #64748b;
+  }
+
+  * {
+    @apply border-[#1e2d45];
+  }
+
+  html {
+    @apply bg-[#0b0f19] text-[#e2e8f0];
+    font-family: "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-[#0b0f19] text-[#e2e8f0] min-h-screen;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0b0f19;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e2d45;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6366f1;
+  }
+}
+
+@layer utilities {
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      #131929 25%,
+      #1a2235 50%,
+      #131929 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+
+  .glass {
+    background: rgba(19, 25, 41, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glow-border {
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.3),
+      0 0 20px rgba(99, 102, 241, 0.1);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #6366f1 0%, #22d3ee 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-gradient {
+    background: radial-gradient(
+        ellipse 80% 60% at 50% -10%,
+        rgba(99, 102, 241, 0.2) 0%,
+        transparent 60%
+      ),
+      #0b0f19;
+  }
+}
